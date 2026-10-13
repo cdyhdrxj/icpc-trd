@@ -3,7 +3,7 @@
 ### Правила сборки PDF
     0. Используйте Linux
     1. sudo apt update
-    2. sudo apt install python3-pip texlive-luatex texlive-lang-korean texlive-latex-extra texlive-math-extra fonts-anonymous-pro texlive-latex-base
+    2. sudo apt install python3-pip texlive-luatex texlive-lang-korean texlive-latex-extra texlive-science fonts-anonymous-pro texlive-latex-base
     5. chmod u+x compile.sh
     6. ./compile.sh
     7. PDF готов!
