@@ -9,9 +9,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/robotolev/xetex:1.0.1
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          texlive-luatex texlive-lang-korean texlive-latex-extra \
+          texlive-commath fonts-anonymous-pro python3-pygments
 
     - name: Compile PDF
       run: |
