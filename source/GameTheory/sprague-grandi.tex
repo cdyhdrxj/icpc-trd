@@ -1,0 +1,6 @@
+Цикл по возможным ходам, функция Гранди это mex функций Гранди для ходов, а для хода это xor функций Гранди для получающихся подотрезков.
+\par There are moves to $A_1, ..., A_k$ from game $A$:
+$$g(A) = mex\{g(A_i) : i=1..k\}$$
+\par Game $B$ consist of independent games $B_1, ..., B_k$:
+$$g(B) = \bigoplus_{i=1}^k g(B_i)$$
+\par Misere nim (loser is one who makes the last move). First player wins if $a_1 \oplus a_2 \oplus ... \oplus a_n \oplus z \neq 0$, where $z=1$ if $a_i=1 \forall i$ and $0$ otherwise.

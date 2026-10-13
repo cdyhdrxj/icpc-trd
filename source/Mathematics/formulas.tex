@@ -1,0 +1,272 @@
+\subsection{Интересные факты из жизни}
+Количество остовных деревьев в полном графе $n^{n - 2}$. \\
+Перебор подмасок: \text{s = (s - 1) \& m} \\
+Код Грея: $n = n \land (n >> 1)$ \\
+
+\lstinputlisting[language=Octave]{source/Mathematics/binary_input.cpp}
+
+Пусть $p$ -- простое число. Тогда $(p - 1)! \equiv -1 \mod p$. \\
+Если сравнение $a_nx^n+ ... + a_1x+a_0 \equiv 0 \mod p$ степени $n$ по простому модулю $p$ имеет более $n$ различных решений, то все коэффициенты $a_0, a_1, . . . , a_n$ кратны $p$. \\
+
+\subsubsection{Радиус вписанной и описанной окружностей}
+
+The radius of circumscribed circle of triangle
+$R = \frac{a\cdot b \cdot c}{4\cdot S}$
+
+The radius of circumscribed circle of regular polygon
+$R = \frac{a}{2\cdot \sin (\frac{180^o}{n})}$
+
+The radius of inscribed circle of triangle
+$R = \frac{S}{p},\ p\ \text{--- half-perimeter.}$
+
+\subsubsection {Объём и площадь геометрических фигур}
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+	\textbf {Sphere}:
+
+	$$S = 4 \cdot \pi R^2;\ S = 2 \cdot \pi \cdot R\cdot h,\ V = \frac{4}{3} \pi \cdot R^3$$
+
+	The surface area of the sphere sector: 
+	$$S = 2 \cdot\pi \cdot R \cdot (R + \frac{r}{2} - \sqrt{R^2 - r^2}) $$
+	
+	The $V$ of sphere segment: 
+	$$V = \frac{1}{3} \cdot \pi \cdot h^2 \cdot (3\cdot R - h)$$
+
+	The $V$ of sphere sector: 
+	$$V = \frac{2}{3} \cdot \pi \cdot R^2 \cdot h$$
+
+	The $V$ of sphere layer: 
+	$$V = \frac{1}{3} \cdot \pi \cdot h \cdot (R^2 + r^2 + \frac{1}{3} \cdot h^2)$$
+
+
+	\textbf {Equilateral triangle}:
+
+	$$S = \frac{\sqrt{3}}{4} \cdot a^2$$
+
+	\textbf {Cone}:
+
+	$$S = \pi \cdot r \cdot l + \pi \cdot r^2,\ V = \frac{h}{3} \cdot \pi \cdot r^2$$
+
+	\textbf {Regular pyramid}:
+
+	$$S = \frac{1}{2}\cdot P \cdot L,\ \text {$P$ --- perimeter, $L$ --- pyramid former.}$$
+
+	$$V = \frac{1}{3}\pi \cdot R^2 \cdot H,\ V = \frac{1}{3}\pi \cdot h (R^2 + R\cdot r + r^2)$$
+
+	\textbf{Regular tetrahedron}:
+
+	$$V = \frac{a^3 \cdot \sqrt{2}}{12} $$
+
+	\textbf{Pyramid}
+
+	$$V = \frac{1}{3} \cdot S \cdot h$$
+
+	V of truncated pyramid: $$V = \frac{1}{3} \cdot h \cdot(S_{down} + \sqrt{S_{down} \cdot S_{up}} + S_{up}) $$
+
+	\textbf {Torus}
+
+	$$V = 2 \cdot \pi^2 R \cdot r^2,\ S = 4 \cdot \pi^2 \cdot R \cdot r$$
+
+	\end{multicols}
+\end{minipage}
+
+
+\subsubsection{Тригонометрия}
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+		$$\sin{\alpha} + \sin{\beta} = 2 \cdot \sin{\frac{\alpha + \beta}{2}} \cdot \cos{\frac{\alpha - \beta}{2}}$$
+		$$\sin{\alpha} - \sin{\beta} = 2 \cdot \sin{\frac{\alpha - \beta}{2}} \cdot \cos{\frac{\alpha + \beta}{2}}$$
+
+		$$\cos{\alpha} + \cos{\beta} = 2 \cdot \cos{\frac{\alpha + \beta}{2}} \cdot \cos{\frac{\alpha - \beta}{2}}$$
+		$$\cos{\alpha} - \cos{\beta} = - 2 \cdot \sin{\frac{\alpha + \beta}{2}} \cdot \cos{\frac{\alpha - \beta}{2}}$$
+
+		$$\sin{(\alpha + \beta)} = \sin{\alpha} \cdot \cos{\beta} + \cos{\alpha} \cdot \sin{\beta}$$
+		$$\sin{(\alpha - \beta)} = \sin{\alpha} \cdot \cos{\beta} - \cos{\alpha} \cdot \sin{\beta}$$
+
+		$$\cos{(\alpha + \beta)} = \cos{\alpha} \cdot \cos{\beta} - \sin{\alpha} \cdot \sin{\beta}$$
+		$$\cos{(\alpha - \beta)} = \cos{\alpha} \cdot \cos{\beta} + \sin{\alpha} \cdot \sin{\beta}$$
+	
+		$$\sin{\alpha} \cdot \sin{\beta} = \frac{\cos{(\alpha - \beta)} - \cos{(\alpha + \beta)}}{2}$$
+
+		$$\sin{\alpha} \cdot \cos{\beta} = \frac{\sin{(\alpha - \beta)} + \sin{(\alpha + \beta)}}{2}$$
+
+		$$\cos{\alpha} \cdot \cos{\beta} = \frac{\cos{(\alpha - \beta)} + \cos{(\alpha + \beta)}}{2}$$
+	\end{multicols}
+\end{minipage}
+\newline
+\newline
+
+For even $n$:
+
+$$cos^n \alpha=\frac {C_\frac n 2^n}{2^n}+\frac1{2^{n-1}} \cdot \sum_{k=0}^{\frac{n}{2} - 1} C_k^n \cdot \cos{((n-2k) \cdot \alpha)}$$
+
+$$sin^n \alpha=\frac {C_\frac n 2^n}{2^n}+\frac1{2^{n-1}} \cdot \sum_{k=0}^{\frac{n}{2} -1} (-1)^{\frac n 2 -k} \cdot C_k^n \cdot \cos{((n-2k) \alpha)}$$
+
+For odd $n$:
+
+$$sin^n \alpha = \frac1{2^{n-1}} \cdot \sum_{k=0}^{\frac{n-1}{2}} (-1)^{\frac {n-1} 2 -k} \cdot C_k^n \cdot \sin{((n-2k) \alpha)}$$
+
+$$cos^n \alpha = \frac1{2^{n-1}} \cdot \sum_{k=0}^{\frac{n-1}{2}} C_k^n \cdot \cos{((n-2k) \alpha)}$$
+
+
+\subsubsection{Таблица интегралов}
+\newcommand{\dx}{\hspace{2pt}dx}
+\newcommand{\dd}[1]{\hspace{2pt}d#1}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+		$$\int \frac{1}{x}\dx = \ln |x|$$
+		
+		$$\int a^x \dx = \frac{1}{\ln a} a^x$$
+
+		$$\int \ln x \dx = x \ln x - x$$
+
+		$$\int \tan x \dx = \ln |\sec x|$$
+
+		$$\int \sec x \dx = \ln |\sec x + \tan x|$$
+		
+		$$\int \sec^2 x \dx = \tan x$$
+
+		$$\int \sec x \tan x \dx = \sec x$$
+		
+		$$\int \frac{a}{a^2+x^2}\dx = \tan^{-1}\frac{x}{a}$$
+
+		$$\int \frac{a}{a^2-x^2}\dx = \frac{1}{2}\ln\left|\frac{x+a}{x-a}\right|$$
+		
+		$$\int \frac{1}{\sqrt{a^2-x^2}} \dx = \sin^{-1} \frac{x}{a}$$
+
+		$$\int \frac{a}{x \sqrt{x^2-a^2}} \dx = \sec^{-1} \frac{x}{a}$$
+		
+		$$\int \frac{1}{\sqrt{x^2-a^2}} \dx = \cosh^{-1} \frac{x}{a} = \nonumber \ln (x+\sqrt{x^2-a^2}) $$
+
+		$$\int \frac{1}{\sqrt{x^2+a^2}} \dx = \sinh^{-1} \frac{x}{a} =\nonumber \ln (x+\sqrt{x^2+a^2})$$
+		
+		$$\int \!\sqrt {-{x}^{2}+1}\,{\rm d}x=\frac{1}{2}\,x\sqrt {-{x}^{2}+1}+\frac{1}{2}\,\arcsin \left( x \right) $$
+	\end{multicols}
+\end{minipage}
+
+\subsubsection{Таблица производных}
+
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+		$$\arcsin(x)' = \frac{1}{\sqrt{1-x^2}}$$
+		
+		$$\arccos(x)' = \frac{-1}{\sqrt{1-x^2}}$$
+
+		$$\arctan(x)' = \frac{1}{1x^2}$$
+		
+		$$\arccot(x)' = \frac{-1}{1+x^2}$$
+
+		$$\log_a(x)' = \frac{1}{x \cdot \ln(a)}$$
+		
+		$$(a^x)' = a^x \cdot \ln(a)$$
+	\end{multicols}
+\end{minipage}
+
+\subsubsection{Линейные уравнения по модулю}
+
+Equation: $a \cdot x = b\ \pmod n$. We should divide $b$, $a$, $n$ on $\gcd {(a, n)}$.
+
+$$a' \cdot x = b'\ \pmod n',\ x_i = x' + i \cdot n'\ \pmod n,\ i = 0..\gcd{(a, n)} - 1$$
+
+\subsubsection{Числа Каталана}
+
+Catalan number: 
+
+$$C_n = \sum_{k = 0}^{n-1} C_k \cdot C_{n-1-k},\ C_n = \frac{1}{n+1} \cdot C_{2n}^{n}$$
+
+$n$-th Catalan number is:
+\begin {itemize}
+	\item number of binary trees with $n+1$ unnumbered leaves;
+	\item number of triangulations of convex $n+2$ polygon;
+	\item number of connections $2n$ points on a circle with non-intersected chords;
+	\item number of non-isomorphic full binary trees with $n$ vertices interior (that have at least one son);
+	\item number of permutations of length $n$, which can be sorted by stack (not such indexes: $i < j < k$ and $a_k < a_i < a_j$);
+	\item number of continuous partitions of set of $n$ elements;
+	\item number of covering $n$-ladder with $n$ rectangles.
+\end {itemize}
+ 
+\subsubsection{Числа Стирлинга}
+
+\begin {enumerate} [I]
+	\item Number of permutations length $n$ with $k$ cycles.
+	$$|s_{n, k}| = |s_{n-1, k-1}| + (n-1) \cdot |s_{n-1, k}|, s_{n, 1} = s_{n, n} = 1$$
+	\item The number of ways to partition a set of n objects into k non-empty subsets.
+	$$|S_{n, k}| = |S_{n-1, k-1}| + k \cdot |S_{n-1, k}|,\ S_{n, k} = \frac{1}{k!} \cdot \sum_{j=0}^{k} (-1)^{k-j}\cdot C_j^k \cdot j^n$$
+\end {enumerate}
+
+\subsubsection{Лемма Бернсайда}
+
+Number of invariant objects: $$N = \frac{1}{\abs{|G|}}\sum_{\pi \in G} k^{C(\pi)}$$ where $G$ is set of all invariant permutations, 
+$k$ is given number of colors, $C(\pi)$ is number of cycles in $\pi$
+
+
+\subsubsection {Биномиальные коэффициенты}
+
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+		$$\sum_{k=0}^{n} C_{n}^{k} = 2^n$$
+		
+		$$\sum_{m=0}^{n} C_{m}^{k} = C_{n+1}^{k+1}$$
+
+		$$\sum_{k=0}^{m} C_{n+k}^{k} = C_{n+m+1}^{m}$$
+		
+		$$\sum_{k=0}^{n} (C_{n}^{k})^2 = C_{2n}^{n}$$
+
+		$$\sum_{k=1}^{n} (C_{n}^{k}) \cdot i = n \cdot 2 ^ {n-1}$$
+
+		$$\sum_{k=0}^{n} (C_{n-k}^{k})^2 = F_{n+1}$$
+	\end{multicols}
+\end{minipage}
+
+\subsubsection {Формулы}
+
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+	Geometric progression: $b_n = b_1 q^{n - 1}$
+	$$
+	S_n = \frac{b_1 (1 - q^n)}{1 - q},\textit { if } q \neq 1;\ S = \frac{b_1}{1 - q},\textit { if } \abs{q} < 1
+	$$
+
+	Pick's formula: 
+	$$S_{polygon} = interior + \frac{boundary}{2} - 1$$
+
+	Bell Numbers:
+	$$B_{n+1} = \sum_{k=0}^{n}{C_k^n \cdot B_k} = \sum_{k=1}^{n}{S_{n,k}}$$
+	
+	Chinese theorem:
+	$$x = \sum_{i=1}^{i=n}{q_i \cdot M_i \cdot M^{-1}_i}$$
+	where $\ M_i = \frac{M}{p_i},\ M^{-1}_i$--- mult inverse of $M_i \bmod p_i$.
+
+	Finding all the inverses in the ring modulo p for prime p:
+	$$r[i] = - \floor {\frac{p}{i}} \cdot r[p\ \bmod\ i]\ \pmod p$$
+
+	Sums of the series: 
+
+	$$\sum_{k=0}^{n} k^2 = {\frac{n(n+1)(2n+1)}{6}}$$
+
+	$$\sum_{k=0}^{n} k^3 = {\frac{n^2(n+1)^2}{4}}$$
+
+	$$\sum_{k=0}^{n} k\cdot x^k = \frac{x - (n+1) \cdot x^{n+1} + n \cdot x^{n+2}}{(x-1)^2}$$
+
+	Square Root: $$x_i = \frac{x_i + \frac{n}{x_i}}{2}$$
+
+	Euler Formulas:
+	\begin {itemize}
+		\item If $G <V, E>$ --- planar graph with $F$ faces then $V - E + F = 2$.
+		\item If $G<V, E>$ --- planar graph with $V \ge 3$ then $E \le 3V-6$.
+	\end {itemize}
+	\end{multicols}
+	Simpson formula: 
+	$$\int_a^b f(x) dx = \frac{b-a}{6} \cdot \left (f(a) + 4 \cdot f \left (\frac{a+b}{2} \right) + f(b) \right )$$
+
+\end{minipage}
+
+\subsubsection{Пифагоровы тройки}
+
+\begin{minipage}{0.48\textwidth}
+    Примитивные тройки: $a=m^{2}-n^{2}, b=2mn, c=m^{2}+n^{2}$
+
+    Все тройки: $a=k\cdot (m^{2}-n^{2}), b=k\cdot (2mn), c=k\cdot (m^{2}+n^{2})$, где $m, n, k$ — натуральные числа, $m > n$, $m - n$ нечётно, $gcd(m, n) = 1$
+\end{minipage}

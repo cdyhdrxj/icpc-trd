@@ -1,95 +1,345 @@
-\documentclass[a4paper, 10pt]{extarticle}
-\usepackage{fontspec}
-\usepackage[a4paper, xetex]{geometry}
-
-\usepackage{listings}
+\documentclass[landscape, 9pt, a4paper, oneside, twocolumn]{extarticle}
+\usepackage{kotex}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{import}
+\usepackage{commath}
 \usepackage{multicol}
-\usepackage{fancyhdr}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{lastpage}
-\usepackage{titlesec}
-\setlist{nolistsep}
+\usepackage{multirow}
 
-\setmainfont{DejaVu Serif}
-\setmonofont[
- BoldFont={Anonymous Pro}, 
- ItalicFont={Anonymous Pro},
- BoldItalicFont={Anonymous Pro}
- ]{Anonymous Pro}
+\usepackage{teamnote}
 
-\lstset{columns=fullflexible}
-\lstset{basicstyle=\scriptsize\ttfamily}
-\lstset{showspaces=false}
-\lstset{showstringspaces=false}
+\teamnote{Petrozavodsk State University}{(Basalova, Gasova, Smirnov)}{PetrSU}
 
-\geometry{portrait}
-\setlength{\topmargin}{-0.5in}
-\setlength{\oddsidemargin}{-0.5in}
-%\setlength{\evensidemargin}{-in}
-\setlength{\columnsep}{1in}
-\setlength{\columnseprule}{0.2pt}
-\textwidth 185mm
-\textheight 250mm
-
-\pagestyle{fancy}
-\lhead{Tula State University (Surname 1, Surname 2, Surname 3)}
-\chead{}
-\rhead{\thepage\ of \pageref{LastPage}}
-\lfoot{}
-\cfoot{}
-\rfoot{}
-
-\newcommand{\includecpp}[2]{
-    \subsection{#1}\
-    \lstinputlisting[language=c++, breaklines=true]{#2}
-}
-\newcommand{\includepy}[2]{
-    \subsection{#1}\
-    \lstinputlisting[language=python, breaklines=true]{#2}
-}
-\newcommand{\includescript}[2]{
-    \subsection{#1}\
-    \lstinputlisting[breaklines=true]{#2}
-}
-\newcommand{\includetex}[2]{
-    \subsection{#1}\
-    \input{#2}
-}
-
-\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\DeclareMathOperator{\arccot}{arccot}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 
 \begin{document}
-\thispagestyle{fancy}
-\pagenumbering{Roman}
 
-\begin{center}
-	\Huge\textsc{ACM-ICPC Team Reference Document}
+%\maketitlepage
+\begin{minipage}{0.48\textwidth}
+	\begin{multicols}{2}
+		\tableofcontents
+	\end{multicols}
+\end{minipage}
 
-	\huge Tula State University (Surname 1, Surname 2, Surname 3)
+% Make Pagebreak if you want.
+%\pagebreak 
 
-	\vspace{0.50cm}
-\end{center}
+%\tableofcontents
 
-\begin{multicols*}{2}
-    \tableofcontents
+\newpage
 
-    \pagenumbering{arabic}
-    \setcounter{page}{1}
-    \input{contents.tex}
-\end{multicols*}
+\ShowUsage
+\ShowComplexity
+\HideAuthor
 
-%\enlargethispage*{\baselineskip}
-%\pagebreak
 
-% == CONTENTS == %
+\newpage
 
-%\pagenumbering{arabic}
-%\setcounter{page}{1}
-%
-%\begin{multicols*}{2}
-%	\input{contents.tex}
-%\end{multicols*}
+\section{Общее}
+
+\Algorithm
+{Шаблон}
+{}
+{}
+{cpp}{source/General/template.cpp}
+{}
+
+\Algorithm
+{Строка компиляции}
+{}
+{}
+{cpp}{source/General/debug_compilation.txt}
+{}
+
+\Algorithm
+{Рандом}
+{}
+{}
+{cpp}{source/General/random.cpp}
+{}
+
+\Algorithm
+{Built-in GCC Stuff}
+{}
+{}
+{cpp}{source/General/gcc-stuff.txt}
+{}
+
+\Algorithm
+{\_\_int128}
+{}
+{}
+{cpp}{source/General/int128.cpp}
+{}
+
+\Algorithm
+{PBDS: Ordered set}
+{}
+{}
+{cpp}{source/General/PBDS.cpp}
+{}
+
+\Algorithm
+{Стресс-тестирование}
+{}
+{}
+{py}{source/General/stress.py}
+{}
+
+\section {Графы}
+
+\Algorithm
+{Поиск мостов}
+{}
+{}
+{cpp}{source/Graphs/bridges.cpp}
+{}
+
+\Algorithm
+{Поиск точек сочленения}
+{}
+{}
+{cpp}{source/Graphs/cutpoints.cpp}
+{}
+
+\Algorithm
+{LCA: sparse table}
+{}
+{}
+{cpp}{source/Graphs/lca.cpp}
+{}
+
+\Algorithm
+{MST: алгоритм Прима}
+{}
+{}
+{cpp}{source/Graphs/prim.cpp}
+{}
+
+\Algorithm
+{Алгоритм Куна}
+{}
+{}
+{cpp}{source/Graphs/kuhn.cpp}
+{}
+
+\Algorithm
+{Эйлеров обход}
+{}
+{}
+{cpp}{source/Graphs/euler.cpp}
+{}
+
+\Algorithm
+{2-SAT}
+{}
+{}
+{cpp}{source/Graphs/sat.cpp}
+{}
+
+\Algorithm
+{Maxflow: алгоритм Диница}
+{}
+{}
+{cpp}{source/Graphs/dinic.cpp}
+{}
+
+\Algorithm
+{Minimal cut}
+{}
+{}
+{cpp}{source/Graphs/mincut.cpp}
+{}
+
+\Algorithm
+{Mincost flow}
+{}
+{}
+{cpp}{source/Graphs/mincost.cpp}
+{}
+
+\section{Математика}
+
+\input source/Mathematics/formulas.tex
+
+\Algorithm
+{FFT}
+{}
+{}
+{cpp}{source/Mathematics/FFT.cpp}
+{}
+
+\Algorithm
+{Нахождение определителя}
+{}
+{}
+{cpp}{source/Mathematics/determinant.cpp}
+{}
+
+\Algorithm
+{Метод Гаусса}
+{}
+{}
+{cpp}{source/Mathematics/gauss.cpp}
+{}
+
+\Algorithm
+{Китайская теорема об остатках}
+{}
+{}
+{cpp}{source/Mathematics/CRT.cpp}
+{}
+
+\Algorithm
+{Тест Миллера-Рабина}
+{}
+{}
+{cpp}{source/Mathematics/miller-rabin.cpp}
+{}
+
+\Algorithm
+{Функция Эйлера}
+{}
+{}
+{cpp}{source/Mathematics/euler_fun.cpp}
+{}
+
+\Algorithm
+{Линейное решето Эратосфена}
+{}
+{}
+{cpp}{source/Mathematics/linear-sieve.cpp}
+{}
+
+\Algorithm
+{Диофантовы уравнения}
+{}
+{}
+{cpp}{source/Mathematics/diofant.cpp}
+{}
+
+\Algorithm
+{Первообразный корень}
+{}
+{}
+{cpp}{source/Mathematics/generator.cpp}
+{}
+
+\subsection {Теория игр}
+\input source/GameTheory/sprague-grandi.tex
+
+\section{Оптимизации динамики}
+\Algorithm
+{LineContainer (aka $\mathcal{O} (N \log{N})$ CHT)}
+{}
+{}
+{cpp}{source/dp/line_container.cpp}
+{}
+
+\Algorithm
+{Convex Hull Trick}
+{}
+{}
+{cpp}{source/dp/cht.cpp}
+{}
+
+\Algorithm
+{Оптимизация Кнута}
+{}
+{}
+{cpp}{source/dp/knut.cpp}
+{}
+
+\section{Структуры данных}
+\Algorithm
+{Декартово дерево с прибавлением на отрезке}
+{}
+{}
+{cpp}{source/DataStructures/cartesian.cpp}
+{}
+
+\Algorithm
+{Дерево Фенвика}
+{}
+{}
+{cpp}{source/DataStructures/fenwick.cpp}
+{}
+
+\Algorithm
+{2D дерево Фенвика}
+{}
+{}
+{cpp}{source/DataStructures/2d-fenwick.cpp}
+{}
+
+\Algorithm
+{Персистентное ДО}
+{}
+{}
+{cpp}{source/DataStructures/pers-segtree.cpp}
+{}
+
+\section{Строки}
+
+\Algorithm
+{Z-функция}
+{}
+{}
+{cpp}{source/Strings/z.cpp}
+{}
+
+\Algorithm
+{Префикс-функция}
+{}
+{}
+{cpp}{source/Strings/prefix.cpp}
+{}
+
+\Algorithm
+{Бор}
+{}
+{}
+{cpp}{source/Strings/trie.cpp}
+{}
+
+\Algorithm
+{Суффиксный массив}
+{}
+{}
+{cpp}{source/Strings/suf_array.cpp}
+{}
+
+\Algorithm
+{Суффиксный автомат}
+{}
+{}
+{cpp}{source/Strings/suf_automata.cpp}
+{}
+
+\section{Геометрия}
+
+\Algorithm
+{Шаблон}
+{}
+{}
+{cpp}{source/Geometry/geometry.cpp}
+{}
+
+\Algorithm
+{Выпуклая оболочка}
+{}
+{}
+{cpp}{source/Geometry/convex.cpp}
+{}
+
+\Algorithm
+{Полезные функции}
+{}
+{}
+{cpp}{source/Geometry/functions.cpp}
+{}
+
 \end{document}

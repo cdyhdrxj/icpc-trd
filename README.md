@@ -1,12 +1,9 @@
-# ICPC TRD template
-Это шаблон репозитория Team Reference Document для ICPC или других командных соревнований по программированию.
-
-Не забудьте проставить свои фамилии, название учебного заведения и (при необходимости) название мероприятия в файле `main.tex`.
+# ICPC TRD
 
 ### Правила сборки PDF
     0. Используйте Linux
     1. sudo apt update
-    2. sudo apt install python3-pip texlive-xetex fonts-anonymous-pro
+    2. sudo apt install python3-pip texlive-luatex texlive-lang-korean texlive-latex-extra texlive-commath fonts-anonymous-pro
     5. chmod u+x compile.sh
     6. ./compile.sh
     7. PDF готов!
