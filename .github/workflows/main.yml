@@ -17,7 +17,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y \
           texlive-luatex texlive-lang-korean texlive-latex-extra \
-          fonts-anonymous-pro python3-pygments
+          texlive-latex-base fonts-anonymous-pro python3-pygments
 
     - name: Compile PDF
       run: |
