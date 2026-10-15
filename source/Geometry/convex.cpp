@@ -1,10 +1,5 @@
 struct Point { ll x, y; };
 
-istream& operator >> (istream &in, Point &p) {
-	in >> p.x >> p.y;
-	return in;
-}
-
 Point operator - (const Point &a, const Point &b) {
 	return {a.x - b.x, a.y - b.y};
 }
