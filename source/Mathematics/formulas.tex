@@ -264,6 +264,15 @@ $k$ is given number of colors, $C(\pi)$ is number of cycles in $\pi$
 	Теорема Люка ($p$ --- простое, $n_i$, $m_i$ --- цифры в $p$-ой системе счисления):
 	$$C_{n}^{m}\equiv \prod_{i=0}^{k-1}C_{n_i}^{m_i} \pmod p$$
 
+	Критерий Эйлера ($p$ --- нечётное простое, $\gcd(p, a) = 1$):
+	$$
+	a^{\frac{p-1}{2}} \equiv
+	\begin{cases}
+	1 \pmod p, & \text{если } a \text{ - квадратичный вычет по модулю } p,\\
+	-1 \pmod p, & \text{если } a \text{ - квадратичный невычет по модулю } p,
+	\end{cases}
+	$$
+
 \end{minipage}
 
 \subsubsection{Пифагоровы тройки}
