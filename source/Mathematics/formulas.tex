@@ -198,9 +198,18 @@ $n$-th Catalan number is:
 
 \subsubsection{Лемма Бернсайда}
 
-Number of invariant objects: $$N = \frac{1}{\abs{|G|}}\sum_{\pi \in G} k^{C(\pi)}$$ where $G$ is set of all invariant permutations, 
-$k$ is given number of colors, $C(\pi)$ is number of cycles in $\pi$
+Используется для подсчёта различных раскрасок с точностью до симметрий (поворотов, отражений и т.д.).
 
+Пусть $G$ — множество всех допустимых симметрий, а $|G|$ --- их количество. Для каждой симметрии $g$ обозначим через
+$|\operatorname{Fix}(g)|$ количество раскрасок, которые не меняются после её применения. Тогда:
+\[
+N = \frac{1}{|G|}\sum_{g \in G} |\operatorname{Fix}(g)|
+\]
+
+Если раскрашиваем $n$ позиций в $k$ цветов, а симметрию $g$ можно записать в виде перестановки, которая имеет $C(g)$ циклов, то:
+\[
+N = \frac{1}{|G|}\sum_{g \in G} k^{C(g)}
+\]
 
 \subsubsection {Бином. коэффициенты}
 

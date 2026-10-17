@@ -14,9 +14,11 @@ const integer INF = 2e18; // change
 struct CHT {
     vector<Line> lines;
 bool mini; // cht on minimum
+
 ld f(Line l1, Line l2) {
     return (ld)(l1.b - l2.b) / (ld)(l2.k - l1.k);
 }
+
 void addLine(integer k, integer b) {
     if (!mini) {
         k = -k;
@@ -41,6 +43,7 @@ void addLine(integer k, integer b) {
     if (!lines.size() || lines.back().k != k)
         lines.push_back(l);
 }
+
 CHT(vector<pair<integer, integer> > v,
 bool ok = 1) // change
 {
@@ -49,6 +52,7 @@ bool ok = 1) // change
     for (int i = 0; i < v.size(); i++)
         addLine(v[i].first, v[i].second);
 }
+
 integer getmin(integer x)
 //find of integer!
 {
